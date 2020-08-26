@@ -35,7 +35,7 @@ tableColumns AS (
 tableDefsTemp AS(
   SELECT table_schema,
          CONCAT('Table',' ', table_name,' ','{',CHAR(13)) AS table_prefix,
-         CONCAT('  ', CAST(QUOTENAME(column_name, '"') AS NCHAR(20)),'  ',column_type,'  ',column_pk) AS table_column,
+         CONCAT('  ', CAST(QUOTENAME(column_name, '"') AS NCHAR(50)),'  ',column_type,'  ',column_pk) AS table_column,
          CONCAT('}',CHAR(13),CHAR(13)) AS table_suffix,
 		 ordinal_position
   FROM tableColumns
